@@ -7,11 +7,11 @@ import { MdWbIncandescent } from "react-icons/md";
 const TodoTemplates = ({ children }) => {    //
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         e.target.checked
-            ? document.documentElement.setAttribute("data-theme", "dark")
-            : document.documentElement.setAttribute("data-theme", "light");
+            ? localStorage.setItem('dark', true)
+            : localStorage.setItem('dark', false);
     };
 
-
+    // document.documentElement.setAttribute("data-theme", "light");
     return (
 
 

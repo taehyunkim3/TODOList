@@ -9,7 +9,9 @@ import TodoList from './components/TodoList';
 const App = () => {
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", "light");
+    localStorage.getItem('dark') ?
+      document.documentElement.setAttribute("data-theme", "dark") :
+      document.documentElement.setAttribute("data-theme", "light");
   }, []);
 
 
