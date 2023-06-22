@@ -4,34 +4,29 @@ import './App.scss';
 import TodoTemplates from './components/TodoTemplates';
 import TodoInsert from './components/TodoInsert'
 import TodoList from './components/TodoList';
+import useLocalStorage from './components/useLocalStorage';
 
 
 const App = () => {
 
-  useEffect(() => {
-    localStorage.getItem('dark') ?
-      document.documentElement.setAttribute("data-theme", "dark") :
-      document.documentElement.setAttribute("data-theme", "light");
-  }, []);
+  const [darkMode, setDarkMode] = useLocalStorage('dark', 'false');
 
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", darkMode === 'true' ? "dark" : "light");
+  }, [darkMode]);
+
+  // useEffect(() => {
+  //   const checkTheme = () => {
+  //     localStorage.getItem('dark') === 'true' ?
+  //       document.documentElement.setAttribute("data-theme", "dark") :
+  //       document.documentElement.setAttribute("data-theme", "light");
+  //   };
 
 
   const [todos, setTodos] = useState([
     {
       id: 1,
-      text: '할일내용여기에여기엔아ㅓㅣ',
-      added: "2023.00.20",
-      checked: false
-    },
-    {
-      id: 2,
-      text: '할일 강아지 산책',
-      added: "2023.00.20",
-      checked: true
-    },
-    {
-      id: 3,
-      text: '리엑트 한번 해보기',
+      text: '예제입니다.',
       added: "2023.00.20",
       checked: false
     }

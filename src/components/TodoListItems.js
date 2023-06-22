@@ -13,7 +13,7 @@ const TodoListItems = ({ todo, onRemove, onToggle }) => {
 
         <div className="content">
             <input className="c" type="checkbox" id={'check' + todo.id} />
-            <label for={'check' + todo.id} onClick={() => { onToggle(id) }}></label>
+            <label htmlFor={'check' + todo.id} onClick={() => { onToggle(id) }}></label>
             <div className="content-main">
                 <p className={cn('checkbox', { checked })}>{text}</p>
                 <p className="contentDesc">{added}</p>
