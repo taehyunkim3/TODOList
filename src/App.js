@@ -15,13 +15,6 @@ const App = () => {
     document.documentElement.setAttribute("data-theme", darkMode === 'true' ? "dark" : "light");
   }, [darkMode]);
 
-  // useEffect(() => {
-  //   const checkTheme = () => {
-  //     localStorage.getItem('dark') === 'true' ?
-  //       document.documentElement.setAttribute("data-theme", "dark") :
-  //       document.documentElement.setAttribute("data-theme", "light");
-  //   };
-
 
   const [todos, setTodos] = useState([
     {
@@ -42,7 +35,6 @@ const App = () => {
       const hour = date.getHours();
       const min = date.getMinutes();
       const all = `${year} / ${month} / ${day}  ${hour}시 ${min}분`
-
 
       const todo = {
         id: nextId.current,
